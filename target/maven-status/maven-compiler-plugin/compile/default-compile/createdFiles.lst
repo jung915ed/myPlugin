@@ -1,0 +1,4 @@
+com/atlassian/tutorial/myPlugin/impl/MyPluginComponentImpl.class
+com/atlassin/tutorial/myPlugin/jiraClient/MyJiraClient.class
+com/atlassin/tutorial/myPlugin/jiraClient/JiraImportBidon.class
+com/atlassian/tutorial/myPlugin/api/MyPluginComponent.class

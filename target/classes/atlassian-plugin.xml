@@ -1,0 +1,63 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+        <bundle-instructions>
+            <Import-Package>
+                com.atlassian.plugin.osgi.bridge.external,
+                com.atlassian.sal.api,
+                com.atlassian.sal.api.auth,
+                com.atlassian.sal.api.pluginsettings,
+                com.atlassian.sal.api.transaction,
+                com.atlassian.sal.api.user,
+                com.atlassian.templaterenderer;resolution:="optional",
+                com.atlassian.templaterenderer.velocity.one.six,
+                com.blackducksoftware.integration.build;resolution:="optional",
+                com.blackducksoftware.integration.build.extractor;resolution:="optional",
+                com.sun.net.httpserver;resolution:="optional",
+                com.thoughtworks.xstream;resolution:="optional",
+                com.thoughtworks.xstream.io;resolution:="optional",
+                com.thoughtworks.xstream.io.xml;resolution:="optional",
+                javax.crypto;resolution:="optional",
+                javax.net.ssl;resolution:="optional",
+                javax.net;resolution:="optional",
+                javax.security.auth.x500;resolution:="optional",
+                javax.servlet;resolution:="optional",
+                javax.servlet.http;resolution:="optional",
+                javax.ws.rs;resolution:="optional",
+                javax.ws.rs.core;resolution:="optional",
+                javax.xml.bind.annotation;resolution:="optional",
+                javax.xml.namespace;resolution:="optional",
+                javax.xml.parsers;resolution:="optional",
+                javax.xml.transform;resolution:="optional",
+                javax.xml.transform.sax;resolution:="optional",
+                javax.xml.transform.stream;resolution:="optional",
+                javax.xml.xpath;resolution:="optional",
+                org.w3c.dom;resolution:="optional",
+                org.w3c.dom.ls;resolution:="optional",
+                org.xml.sax;resolution:="optional",
+                org.xml.sax.ext;resolution:="optional",
+                org.xml.sax.helpers;resolution:="optional",
+                sun.misc;resolution:="optional"
+            </Import-Package>
+        </bundle-instructions>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="myPlugin"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="myPlugin-resources" name="myPlugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>
+        <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>myPlugin</context>
+    </web-resource>
+
+</atlassian-plugin>
