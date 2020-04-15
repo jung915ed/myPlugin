@@ -30,7 +30,7 @@ public class MyJiraClient {
 
     public static void main(String[] args) throws IOException {
 
-        MyJiraClient myJiraClient = new MyJiraClient("oidcservice", "0422220507", "https://jira.sso.edu.tw/jira/rest/api/2/issue/");
+        MyJiraClient myJiraClient = new MyJiraClient("oidcservice", "0422220507", "https://jira.sso.edu.tw/jira");
 
         final String issueKey = myJiraClient.createIssue("IDC", 10003L, "Issue created from JRJC");
         myJiraClient.updateIssueDescription(issueKey, "This is description from my Jira Client");
