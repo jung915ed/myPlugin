@@ -37,11 +37,11 @@ public class MyJiraClient {
         Issue issue = myJiraClient.getIssue(issueKey);
         System.out.println(issue.getDescription());
 
-        myJiraClient.voteForAnIssue(issue);
+        //myJiraClient.voteForAnIssue(issue);
 
-        System.out.println(myJiraClient.getTotalVotesCount(issueKey));
+        //System.out.println(myJiraClient.getTotalVotesCount(issueKey));
 
-        //myJiraClient.addComment(issue, "This is comment from my Jira Client");
+        myJiraClient.addComment(issue, "This is comment from my Jira Client");
 
         List<Comment> comments = myJiraClient.getAllComments(issueKey);
         comments.forEach(c -> System.out.println(c.getBody()));
